@@ -3,7 +3,7 @@ import {fetchJson} from "./http";
 const requests = {
     getMovie: async () => await fetchJson(""),
     getAllMovies: async () => await fetchJson("http://api.tvmaze.com/shows"),
-    getActionMovies: async () => await fetchJson(""),
+    getActionMovies: async () => await fetchJson("http://api.tvmaze.com/shows"),
     getComedyMovies: async () => await fetchJson(""),
     getCrimeMovies: async () => await fetchJson(""),
     getDramaMovies: async () => await fetchJson(""),
@@ -13,4 +13,6 @@ const requests = {
     getThrillerMovies: async () => await fetchJson(""),
 };
 
-export default requests;
+module.exports = {
+    requests: requests
+}

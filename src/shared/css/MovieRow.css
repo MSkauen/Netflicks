@@ -1,0 +1,15 @@
+.movie_poster {
+    transition: 0.3s;
+    object-fit: contain;
+    width: 100%;
+    max-height: 100px;
+    margin-left: 5px;
+}
+.movie_poster:hover {
+    transform: scale(1.07);
+}
+.movie_posters {
+    display: flex;
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
