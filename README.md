@@ -1,0 +1,2 @@
+# Netflicks
+Streaming platform clone
