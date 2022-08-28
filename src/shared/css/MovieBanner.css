@@ -1,0 +1,17 @@
+.movie_banner {
+    object-fit: cover;
+    width: 100%;
+    z-index: -99;
+    transition: all .3s;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow-y: hidden;
+}
+.banner {
+    position: relative;
+    overflow-y: hidden;
+    padding-top: 140px;
+    padding-left: 30px;
+    height: 190px
+}
