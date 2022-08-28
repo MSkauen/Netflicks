@@ -1,3 +1,9 @@
 * {
     margin: 0;
+    font-family: Arial, serif;
+}
+
+.App {
+    background-color: #111;
+    text-shadow: rgb(0 0 0) 0 2px 4px;
 }

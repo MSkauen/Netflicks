@@ -1,10 +1,12 @@
 import React from "react";
 import GetMovieRow from "../MovieRow";
 import GetMovieBanner from "../MovieBanner";
+import Navbar from "../Navbar";
 import "../../shared/css/App.css";
 
 export function FrontPage ({movieApi}) {
     return <div className="App">
+        <Navbar movieApi={movieApi}/>
         <GetMovieBanner movieApi={movieApi}/>
         <GetMovieRow title="All movies" isLargeRow movieApi={movieApi}/>
         <GetMovieRow title="Action" genre="Action" movieApi={movieApi}/>
