@@ -2,6 +2,9 @@ import {fetchJson} from "./http";
 
 const requests = {
     getMovie: async () => await fetchJson(""),
+    getRandomMovie: async () => await fetchJson("http://api.tvmaze.com/shows").then(
+        res => res[Math.floor(Math.random() * res.length - 1)]
+    ),
     getAllMovies: async () => await fetchJson("http://api.tvmaze.com/shows"),
     getActionMovies: async () => await fetchJson("http://api.tvmaze.com/shows"),
     getComedyMovies: async () => await fetchJson(""),

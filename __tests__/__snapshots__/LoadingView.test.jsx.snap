@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`loading view show loading view 1`] = `
+<div
+  id="error-view"
+>
+  <img
+    alt="Loading"
+    src=""
+  />
+</div>
+`;
+
+exports[`loading view show loading view on dom 1`] = `"<div id="error-view"><img src="" alt="Loading"></div>"`;
