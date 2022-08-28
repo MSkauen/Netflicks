@@ -1,0 +1,19 @@
+.search_results_row {
+    margin-left: 30px;
+    color: #fff;
+    height: 100%;
+}
+.search_results_row .movie_poster {
+    flex-wrap: wrap;
+}
+
+.search_results_posters {
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100vw;
+}
+
+.movie_posters::-webkit-scrollbar {
+    display: none;
+}
