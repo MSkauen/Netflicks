@@ -1,8 +1,8 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { requests } from "./lib/http/requests";
+import { FrontPage } from "./pages/FrontPage";
 import NotFound from "./lib/NotFound";
-import {FrontPage} from "./pages/FrontPage";
-import {requests} from "./lib/http/requests";
 
 export function Application() {
 

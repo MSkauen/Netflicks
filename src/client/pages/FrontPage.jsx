@@ -1,7 +1,7 @@
 import React from "react";
-import "../../shared/css/App.css";
 import GetMovieRow from "../MovieRow";
 import GetMovieBanner from "../MovieBanner";
+import "../../shared/css/App.css";
 
 export function FrontPage ({movieApi}) {
     return <div className="App">
