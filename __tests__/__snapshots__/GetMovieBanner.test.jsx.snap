@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`get movie banner show random movie banner 1`] = `""`;
+
+exports[`get movie banner show selected movie banner 1`] = `""`;

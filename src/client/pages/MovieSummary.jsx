@@ -4,7 +4,7 @@ import Navbar from "../components/Navbar";
 import "../../shared/css/App.css";
 import GetMovieRow from "../components/MovieRow";
 
-export function MovieSummaryPage ({movieApi}) {
+export function MovieSummary ({movieApi}) {
     return <div className="App">
         <Navbar movieApi={movieApi}/>
         <GetSingleMovieBanner movieApi={movieApi}/>
