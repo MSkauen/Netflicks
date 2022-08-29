@@ -19,7 +19,7 @@ function MovieRow ({movieApi, data, title, isLargeRow}) {
                                      src={movie.image.original} alt={movie.name}/>
                             ) : (
                                 <>
-                                    <div className="movie_details">
+                                    <div key={movie.id} className="movie_details">
                                         <h4 key={movie.name}>{movie.name}</h4>
                                         <span key={"r" + movie.id}>{movie.rating.average}</span>
                                     </div>
