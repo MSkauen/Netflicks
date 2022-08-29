@@ -1,16 +1,17 @@
 import React, { useState} from "react";
-import {ErrorView} from "./lib/ErrorView";
-import {LoadingView} from "./lib/LoadingView";
-import {useLoading} from "./lib/http/useLoading";
-import "../shared/css/MovieRow.css";
-import "../shared/css/SearchResults.css";
+import {ErrorView} from "../lib/ErrorView";
+import {LoadingView} from "../lib/LoadingView";
+import {useLoading} from "../lib/http/useLoading";
+import "../../shared/css/MovieRow.css";
+import "../../shared/css/SearchResults.css";
 import Background from "./Background";
-import {useParams} from "react-router";
+import {useNavigate, useParams} from "react-router";
 
 export function SearchResults ({movieApi, data, title}) {
     const [movies] = useState(data);
+    const navigate = useNavigate();
     const [sortType, setSortType] = useState(false);
-    const [sortGenre, setSortGenre] = useState(null);
+    const [sortGenre, setSortGenre] = useState('');
 
     let [sortedMovies] = useState(movies);
 
@@ -27,6 +28,8 @@ export function SearchResults ({movieApi, data, title}) {
         setSortGenre(e.target.value);
 
     };
+
+    //This is not great
     if (sortType === false) {
         sortedMovies = sortedMoviesDes;
     } else if (sortType === true) {
@@ -38,11 +41,11 @@ export function SearchResults ({movieApi, data, title}) {
 
     return (
         <div className="search_results_row">
-            <h2>Search results for '{title}': {data.length} titles</h2>
+            <h2 className="search_results_title">Search results for '{title}': {data.length} titles</h2>
             <button className="banner_button" onClick={sort}>Sort by rating</button>
 
             <select className="banner_button" onChange={handleCategoryChange} value={sortGenre}>
-                <option value="none">None</option>
+                <option value="">Category</option>
                 <option value="Action">Action</option>
                 <option value="Comedy">Comedy</option>
                 <option value="Crime">Crime</option>
@@ -55,7 +58,7 @@ export function SearchResults ({movieApi, data, title}) {
 
             <div className="search_results_posters">
                 {sortedMovies.map(movie => (
-                    <div className="movie">
+                    <div key={movie.show.id} className="movie" onClick={(e) => navigate(`/show/${movie.show.id}`)} >
                         <div className="movie_details">
                             <h4 key={movie.show.name}>{movie.show.name}</h4>
                             <span key={"r" + movie.id}>{movie.show.rating.average}</span>

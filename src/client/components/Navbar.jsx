@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import "../shared/css/Navbar.css";
+import "../../shared/css/Navbar.css";
 import { useNavigate } from "react-router";
 
 const listener = (handleShow) => {
@@ -39,6 +39,7 @@ export default function Navbar({movieApi}) {
                 className="nav_logo"
                 src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg"
                 alt="Netflicks Logo"
+                onClick={(e) => navigate(`/`)}
             />
             <div className="nav_buttons">
                 <form className="nav_search" onSubmit={submit} method="GET">

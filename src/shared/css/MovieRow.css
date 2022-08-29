@@ -1,8 +1,10 @@
 .row {
     margin-left: 30px;
+    margin-top: 15px;
     color: #fff;
 }
 .movie {
+    cursor: pointer;
     position: relative;
     width: 100%;
     transition: 0.3s;

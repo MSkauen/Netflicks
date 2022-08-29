@@ -3,7 +3,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { describe, expect, it } from "@jest/globals";
 import { act } from "react-dom/test-utils";
-import {SearchResults} from "../src/client/SearchResults";
+import {SearchResults} from "../src/client/components/SearchResults";
 
 const dummyMovie = {
     show: {

@@ -1,8 +1,8 @@
 import React, {useState} from "react";
-import {useLoading} from "./lib/http/useLoading";
-import {ErrorView} from "./lib/ErrorView";
-import {LoadingView} from "./lib/LoadingView";
-import missing from "../shared/img/missing.png";
+import {useLoading} from "../lib/http/useLoading";
+import {ErrorView} from "../lib/ErrorView";
+import {LoadingView} from "../lib/LoadingView";
+import missing from "../../shared/img/missing.png";
 
 function Background ({backgroundUrl, isRow}) {
     const [data] = useState(backgroundUrl)
