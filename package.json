@@ -44,9 +44,6 @@
     "jest-environment-jsdom": "^29.0.1",
     "process": "^0.11.10"
   },
-  "alias": {
-    "process": "false"
-  },
   "jest": {
     "transform": {
       "\\.jsx": "babel-jest"
