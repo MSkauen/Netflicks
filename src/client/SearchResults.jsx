@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, { useState} from "react";
 import {ErrorView} from "./lib/ErrorView";
 import {LoadingView} from "./lib/LoadingView";
 import {useLoading} from "./lib/http/useLoading";
@@ -10,6 +10,8 @@ import {useParams} from "react-router";
 function SearchResults ({movieApi, data, title}) {
     const [movies] = useState(data);
     const [sortType, setSortType] = useState(false);
+    const [sortGenre, setSortGenre] = useState(null);
+
     let [sortedMovies] = useState(movies);
 
     const sortedMoviesAsc = [].concat(movies)
@@ -17,22 +19,40 @@ function SearchResults ({movieApi, data, title}) {
 
     const sortedMoviesDes = [].concat(movies)
         .sort((a, b) => a.show.rating.average < b.show.rating.average ? 1 : -1);
-
     const sort = () => {
         setSortType(current => !current)
-    };
 
+    };
+    const handleCategoryChange = (e) => {
+        setSortGenre(e.target.value);
+
+    };
     if (sortType === false) {
         sortedMovies = sortedMoviesDes;
     } else if (sortType === true) {
         sortedMovies = sortedMoviesAsc;
     }
-
+    if(data && sortGenre) {
+        sortedMovies = sortedMovies.filter(movie => movie.show.genres.includes(sortGenre));
+    }
 
     return (
         <div className="search_results_row">
             <h2>Search results for '{title}': {data.length} titles</h2>
             <button className="banner_button" onClick={sort}>Sort by rating</button>
+
+            <select className="banner_button" onChange={handleCategoryChange} value={sortGenre}>
+                <option value="none">None</option>
+                <option value="Action">Action</option>
+                <option value="Comedy">Comedy</option>
+                <option value="Crime">Crime</option>
+                <option value="Drama">Drama</option>
+                <option value="Horror">Horror</option>
+                <option value="Romance">Romance</option>
+                <option value="Science-Fiction">Science-fiction</option>
+                <option value="Thriller">Thriller</option>
+            </select>
+
             <div className="search_results_posters">
                 {sortedMovies.map(movie => (
                     <div className="movie">

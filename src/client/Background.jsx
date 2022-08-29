@@ -1,18 +1,24 @@
+import React, {useState} from "react";
 import {useLoading} from "./lib/http/useLoading";
 import {ErrorView} from "./lib/ErrorView";
 import {LoadingView} from "./lib/LoadingView";
-import React, {useState} from "react";
+import missing from "../shared/img/missing.png";
 
 function Background ({backgroundUrl, isRow}) {
     const [data] = useState(backgroundUrl)
-    const filteredImages = data.find(res => res.type === "background");
-
-    if(isRow && filteredImages && !data.length < 1) {
-        return <img key={data.id + 100} className="movie_poster_landscape" src={filteredImages.resolutions.original.url} alt={data.name}/>
-    } else if (!filteredImages) {
-        return <img key={data.id + 100} className="movie_poster_landscape" src={data[0].resolutions.original.url} alt={data.name}/>
+    const filteredBackgrounds = data.find(res => res.type === "background");
+    const filteredPosters = data.find(res => res.type === "poster");
+    
+    if(data.length !== 0) {
+        if(isRow && filteredBackgrounds && !data.length < 1) {
+            return <img key={data.id + 100} className="movie_poster_landscape" src={filteredBackgrounds.resolutions.original.url} alt={data.name}/>
+        } else if (!filteredBackgrounds) {
+            return <img key={data.id + 100} className="movie_poster_landscape" src={filteredPosters.resolutions.original.url} alt={data.name}/>
+        } else if (data){
+            return <img key={data.id + 100} className="movie_banner" src={filteredBackgrounds.resolutions.original.url} alt={data.name}/>
+        }
     } else {
-        return <img key={data.id + 100} className="movie_banner" src={filteredImages.resolutions.original.url} alt={data.name}/>
+        return <img className="movie_poster_landscape" src={missing} alt=""/>
     }
 }
 

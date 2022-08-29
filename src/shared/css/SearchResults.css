@@ -11,9 +11,8 @@
     padding: 20px;
     display: flex;
     flex-wrap: wrap;
-    width: 100vw;
 }
 
-.movie_posters::-webkit-scrollbar {
-    display: none;
+.search_results_row .movie {
+    width: auto;
 }
