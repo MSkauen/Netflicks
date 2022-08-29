@@ -70,7 +70,7 @@ export function SearchResults ({movieApi, data, title}) {
     )
 }
 
-export default function GetSearchResults ({movieApi, title}) {
+export default function GetSearchResults ({movieApi}) {
     const { id } = useParams()
 
     const { data: data, loading, error, reload } = useLoading(

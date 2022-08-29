@@ -11,7 +11,7 @@ const listener = (handleShow) => {
 }
 
 
-export default function Navbar({movieApi}) {
+export default function Navbar() {
     const [show, handleShow] = useState(false);
     const [search, setSearch] = React.useState('');
     const navigate = useNavigate();
@@ -22,7 +22,6 @@ export default function Navbar({movieApi}) {
 
     const submit = async (e) => {
         e.preventDefault();
-
         navigate(`/search/shows/${search}`);
     }
 
@@ -39,7 +38,7 @@ export default function Navbar({movieApi}) {
                 className="nav_logo"
                 src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg"
                 alt="Netflicks Logo"
-                onClick={(e) => navigate(`/`)}
+                onClick={() => navigate(`/`)}
             />
             <div className="nav_buttons">
                 <form className="nav_search" onSubmit={submit} method="GET">

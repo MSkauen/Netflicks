@@ -16,10 +16,12 @@ function MovieBanner ({movieApi, data, truncateDesc}) {
             <div className="banner_contents">
                 <Background movieApi={movieApi} movieId={movie.id}/>
                 <h1 className="banner_title">{data.name}</h1>
+
                 <div className="banner_buttons">
                     <button className="banner_button">Play</button>
                     <button className="banner_button">Add to My list</button>
                 </div>
+
                 <h1 className="banner_description">
                     {!truncateDesc ? (
                         truncate(cleanMovieSummary, 150)

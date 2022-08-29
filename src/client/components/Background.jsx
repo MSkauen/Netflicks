@@ -11,11 +11,22 @@ function Background ({backgroundUrl, isRow}) {
 
     if(data.length !== 0) {
         if(isRow && filteredBackgrounds && !data.length < 1) {
-            return <img key={data.id + 100} className="movie_poster_landscape" src={filteredBackgrounds.resolutions.original.url} alt={data.name}/>
+            return <img key={data.id + 100}
+                        className="movie_poster_landscape"
+                        src={filteredBackgrounds.resolutions.original.url}
+                        alt={data.name}/>
+
         } else if (!filteredBackgrounds) {
-            return <img key={data.id + 100} className="movie_poster_landscape" src={filteredPosters.resolutions.original.url} alt={data.name}/>
+            return <img key={data.id + 100}
+                        className="movie_poster_landscape"
+                        src={filteredPosters.resolutions.original.url}
+                        alt={data.name}/>
+
         } else if (data){
-            return <img key={data.id + 100} className="movie_banner" src={filteredBackgrounds.resolutions.original.url} alt={data.name}/>
+            return <img key={data.id + 100}
+                        className="movie_banner"
+                        src={filteredBackgrounds.resolutions.original.url}
+                        alt={data.name}/>
         }
     } else {
         return <img className="movie_poster_landscape" src={missing} alt=""/>

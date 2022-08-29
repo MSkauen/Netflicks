@@ -12,8 +12,10 @@ function MovieRow ({movieApi, data, title, isLargeRow}) {
         <div className="row">
             <h2>{title}</h2>
                 <div className="movie_posters">
+
                     {movies.map(movie => (
                         <a key={movie.id} href={`/show/${movie.id}`} className="movie">
+
                             {!isLargeRow ? (
                                 <img className={`movie_poster ${isLargeRow && "movie_poster_landscape"}`}
                                      src={movie.image.original} alt={movie.name}/>
@@ -23,11 +25,14 @@ function MovieRow ({movieApi, data, title, isLargeRow}) {
                                         <h4>{movie.name}</h4>
                                         <span>{movie.rating.average}</span>
                                     </div>
+
                                     <Background movieApi={movieApi} movieId={movie.id} isRow/>
                                 </>
-                                )}
+                            )}
+
                         </a>
                     ))}
+
                 </div>
             </div>
     )
