@@ -7,10 +7,10 @@ import { useLoading } from "../lib/http/useLoading";
 import "../../shared/css/MovieBanner.css";
 import {useParams} from "react-router";
 
-function MovieBanner ({movieApi, data}) {
+function MovieBanner ({movieApi, data, truncateDesc}) {
     const [movie] = useState(data)
     const cleanMovieSummary = movie.summary.replace(/<\/?[^>]+(>|$)/g, "");
-    console.log(data)
+
     return (
         <header className="banner">
             <div className="banner_contents">
@@ -21,7 +21,11 @@ function MovieBanner ({movieApi, data}) {
                     <button className="banner_button">Add to My list</button>
                 </div>
                 <h1 className="banner_description">
-                    {truncate(cleanMovieSummary, 150)}
+                    {!truncateDesc ? (
+                        truncate(cleanMovieSummary, 150)
+                    ) : (
+                        cleanMovieSummary
+                    )}
                 </h1>
             </div>
 
@@ -63,5 +67,5 @@ export function GetSingleMovieBanner ({movieApi}) {
         return <LoadingView />;
     }
 
-    return <MovieBanner movieApi={movieApi} data={data}/>;
+    return <MovieBanner movieApi={movieApi} truncateDesc data={data}/>;
 }

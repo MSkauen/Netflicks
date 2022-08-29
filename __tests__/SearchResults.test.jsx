@@ -21,10 +21,10 @@ describe("search results", () => {
         const container = document.createElement("div");
         document.body.appendChild(container);
         await act(async () => {
-            ReactDOM.render(<SearchResults title="Result" data={dummyMovie} />, container);
+            ReactDOM.render(<SearchResults title="Result" data={dummyMovie} movieApi={requests}/>, container);
         });
 
         expect(container.innerHTML).toMatchSnapshot();
-        expect(container.querySelector("movie").textContent).toEqual("Movie name");
+        expect(container.querySelector("h2").textContent).toContain("1");
     });
 })

@@ -44,7 +44,7 @@ export function SearchResults ({movieApi, data, title}) {
             <button className="banner_button" onClick={sort}>Sort by rating</button>
 
             <select className="banner_button" onChange={handleCategoryChange} value={sortGenre}>
-                <option value="">Category</option>
+                <option value="">Sort by category</option>
                 <option value="Action">Action</option>
                 <option value="Comedy">Comedy</option>
                 <option value="Crime">Crime</option>

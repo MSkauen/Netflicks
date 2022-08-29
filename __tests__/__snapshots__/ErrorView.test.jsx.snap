@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`error view show error view 1`] = `
+<div
+  id="error-view"
+>
+  Something went wrong 
+  <div />
+</div>
+`;
+
+exports[`error view show error view on dom 1`] = `"<div id="error-view">Something went wrong <div></div></div>"`;
