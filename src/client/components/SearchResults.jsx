@@ -5,11 +5,10 @@ import {useLoading} from "../lib/http/useLoading";
 import "../../shared/css/MovieRow.css";
 import "../../shared/css/SearchResults.css";
 import Background from "./Background";
-import {useNavigate, useParams} from "react-router";
+import {useParams} from "react-router";
 
 export function SearchResults ({movieApi, data, title}) {
     const [movies] = useState(data);
-    const navigate = useNavigate();
     const [sortType, setSortType] = useState(false);
     const [sortGenre, setSortGenre] = useState('');
 
@@ -58,13 +57,13 @@ export function SearchResults ({movieApi, data, title}) {
 
             <div className="search_results_posters">
                 {sortedMovies.map(movie => (
-                    <div key={movie.show.id} className="movie" onClick={(e) => navigate(`/show/${movie.show.id}`)} >
+                    <a key={movie.show.id} href={`/show/${movie.show.id}`} className="movie">
                         <div className="movie_details">
                             <h4 key={movie.show.name}>{movie.show.name}</h4>
                             <span key={"r" + movie.id}>{movie.show.rating.average}</span>
                         </div>
                         <Background key={movie.show.id} movieApi={movieApi} movieId={movie.show.id} isRow/>
-                    </div>
+                    </a>
                 ))}
             </div>
         </div>
