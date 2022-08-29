@@ -13,17 +13,17 @@ function MovieRow ({movieApi, data, title, isLargeRow}) {
             <h2>{title}</h2>
                 <div className="movie_posters">
                     {movies.map(movie => (
-                        <a href={`/show/${movie.id}`} className="movie">
+                        <a key={movie.id} href={`/show/${movie.id}`} className="movie">
                             {!isLargeRow ? (
-                                <img key={movie.id} className={`movie_poster ${isLargeRow && "movie_poster_landscape"}`}
+                                <img className={`movie_poster ${isLargeRow && "movie_poster_landscape"}`}
                                      src={movie.image.original} alt={movie.name}/>
                             ) : (
                                 <>
-                                    <div key={movie.id} className="movie_details">
-                                        <h4 key={movie.name}>{movie.name}</h4>
-                                        <span key={"r" + movie.id}>{movie.rating.average}</span>
+                                    <div className="movie_details">
+                                        <h4>{movie.name}</h4>
+                                        <span>{movie.rating.average}</span>
                                     </div>
-                                    <Background key={movie.id} movieApi={movieApi} movieId={movie.id} isRow/>
+                                    <Background movieApi={movieApi} movieId={movie.id} isRow/>
                                 </>
                                 )}
                         </a>

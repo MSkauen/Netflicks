@@ -59,10 +59,10 @@ export function SearchResults ({movieApi, data, title}) {
                 {sortedMovies.map(movie => (
                     <a key={movie.show.id} href={`/show/${movie.show.id}`} className="movie">
                         <div className="movie_details">
-                            <h4 key={movie.show.name}>{movie.show.name}</h4>
-                            <span key={"r" + movie.id}>{movie.show.rating.average}</span>
+                            <h4>{movie.show.name}</h4>
+                            <span>{movie.show.rating.average}</span>
                         </div>
-                        <Background key={movie.show.id} movieApi={movieApi} movieId={movie.show.id} isRow/>
+                        <Background movieApi={movieApi} movieId={movie.show.id} isRow/>
                     </a>
                 ))}
             </div>
