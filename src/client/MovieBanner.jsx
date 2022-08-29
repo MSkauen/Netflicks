@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Background from "./Background";
 import { ErrorView } from "./lib/ErrorView";
-import truncate from "./lib/Truncate";
+import truncate from "./lib/truncate";
 import { LoadingView } from "./lib/LoadingView";
 import { useLoading } from "./lib/http/useLoading";
 import "../shared/css/MovieBanner.css";
