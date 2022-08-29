@@ -21,7 +21,7 @@ describe("search results", () => {
         const container = document.createElement("div");
         document.body.appendChild(container);
         await act(async () => {
-            ReactDOM.render(<SearchResults title="Result" data={dummyMovie} movieApi={requests}/>, container);
+            ReactDOM.render(<SearchResults title="Result" data={dummyMovie} />, container);
         });
 
         expect(container.innerHTML).toMatchSnapshot();
