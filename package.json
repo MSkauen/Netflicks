@@ -8,8 +8,7 @@
     "start:express": "node src/server/server.js",
     "start:parcel": "parcel src/shared/html/index.html",
     "build": "parcel build src/shared/html/index.html --no-source-maps",
-    "test:dev": "jest --env=jsdom",
-    "test": "jest"
+    "test": "jest --env=jsdom"
   },
   "repository": {
     "type": "git",
@@ -32,7 +31,7 @@
     "cookie-parser": "^1.4.6",
     "dotenv": "^16.0.1",
     "express": "^4.17.3",
-    "parcel": "^2.4.1",
+    "parcel": "^2.3.2",
     "react": "17.0.0",
     "react-dom": "^17.0.0",
     "react-router": "^6.3.0",
@@ -44,7 +43,6 @@
     "jest-environment-jsdom": "^29.0.1",
     "process": "^0.11.10"
   },
-
   "jest": {
     "transform": {
       "\\.jsx": "babel-jest"
