@@ -13,7 +13,9 @@ describe("loading view", () => {
     it("show loading view on dom", () => {
         const container = document.createElement("div");
         document.body.appendChild(container);
-        act(() => ReactDOM.render(<LoadingView/>, container))
-            expect(container.innerHTML).toMatchSnapshot();
+        act(() => {
+            ReactDOM.render(<LoadingView/>, container)
+        });
+        expect(container.innerHTML).toMatchSnapshot();
     })
 })

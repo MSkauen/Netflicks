@@ -7,7 +7,7 @@ import "../shared/css/SearchResults.css";
 import Background from "./Background";
 import {useParams} from "react-router";
 
-function SearchResults ({movieApi, data, title}) {
+export function SearchResults ({movieApi, data, title}) {
     const [movies] = useState(data);
     const [sortType, setSortType] = useState(false);
     const [sortGenre, setSortGenre] = useState(null);
