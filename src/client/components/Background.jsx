@@ -5,12 +5,12 @@ import {LoadingView} from "../lib/LoadingView";
 import missing from "../../shared/img/missing.png";
 
 function Background ({backgroundUrl, isRow}) {
-    const [data] = useState(backgroundUrl)
-    const filteredBackgrounds = data.find(res => res.type === "background");
+    const [data] = useState(backgroundUrl);
+    const filteredBackgrounds = data.find(res => res.type === 'background')
     const filteredPosters = data.find(res => res.type === "poster");
 
     if(data.length !== 0) {
-        if(isRow && filteredBackgrounds && !data.length < 1) {
+        if(isRow && filteredBackgrounds && data.length > 0) {
             return <img key={data.id + 100}
                         className="movie_poster_landscape"
                         src={filteredBackgrounds.resolutions.original.url}
