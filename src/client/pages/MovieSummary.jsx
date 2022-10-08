@@ -8,6 +8,10 @@ export function MovieSummary ({movieApi}) {
     return <div className="App">
         <Navbar movieApi={movieApi}/>
         <GetSingleMovieBanner movieApi={movieApi}/>
+        {/*
+            Display season and episode information here later
+            <GetMovieContent movieApi={movieApi}/>
+        */}
         <GetMovieRow title="Other titles" genre="" isLargeRow movieApi={movieApi}/>
     </div>
 }

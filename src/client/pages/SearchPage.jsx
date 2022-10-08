@@ -7,7 +7,7 @@ import GetMovieRow from "../components/MovieRow";
 
 export function SearchPage ({movieApi}) {
     return <div className="App">
-        <Navbar movieApi={movieApi}/>
+        <Navbar />
         <GetRandomMovieBanner movieApi={movieApi}/>
         <GetSearchResults title="Result" movieApi={movieApi}/>
         <GetMovieRow title="Other titles" genre="" movieApi={movieApi}/>

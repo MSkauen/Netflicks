@@ -1,3 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`search results show search results on dom 1`] = `"<div id="error-view"><img src="" alt="Loading"></div>"`;
+exports[`search results show search results on dom 1`] = `"<div class="search_results_row"><h2 class="search_results_title">Search results for 'Dome': 0 titles</h2><button class="banner_button">Sort by rating</button><select class="banner_button"><option value="">Sort by category</option><option value="Action">Action</option><option value="Comedy">Comedy</option><option value="Crime">Crime</option><option value="Drama">Drama</option><option value="Horror">Horror</option><option value="Romance">Romance</option><option value="Science-Fiction">Science-fiction</option><option value="Thriller">Thriller</option></select><div class="search_results_posters"></div></div>"`;

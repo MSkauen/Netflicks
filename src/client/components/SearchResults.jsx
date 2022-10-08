@@ -7,7 +7,7 @@ import "../../shared/css/SearchResults.css";
 import Background from "./Background";
 import {useParams} from "react-router";
 
-export function SearchResults ({movieApi, data, title}) {
+export function SearchResults ({movieApi, data, query}) {
     const [movies] = useState(data);
     const [sortType, setSortType] = useState(false);
     const [sortGenre, setSortGenre] = useState('');
@@ -40,7 +40,7 @@ export function SearchResults ({movieApi, data, title}) {
 
     return (
         <div className="search_results_row">
-            <h2 className="search_results_title">Search results for '{title}': {data.length} titles</h2>
+            <h2 className="search_results_title">Search results for '{query}': {data.length} titles</h2>
             <button className="banner_button" onClick={sort}>Sort by rating</button>
 
             <select className="banner_button" onChange={handleCategoryChange} value={sortGenre}>
@@ -75,7 +75,7 @@ export default function GetSearchResults ({movieApi}) {
 
     const { data: data, loading, error, reload } = useLoading(
         async () => await movieApi.getMovie(id),
-        []
+        [id]
     );
 
     if (error) {
@@ -86,6 +86,6 @@ export default function GetSearchResults ({movieApi}) {
         return <LoadingView />;
     }
 
-    return <SearchResults movieApi={movieApi} data={data.splice(0, 15)} title={id}/>;
+    return <SearchResults movieApi={movieApi} data={data.splice(0, 15)} query={id}/>;
 }
 
